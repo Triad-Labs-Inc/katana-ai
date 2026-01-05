@@ -2,6 +2,15 @@
   "name": "katana-ai",
   "version": "1.0.0",
   "description": "Sharp. Precise. Powerful. A TUI application built with OpenTUI.",
+  "author": "Triad Labs Inc.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Triad-Labs-Inc/katana-ai.git"
+  },
+  "homepage": "https://github.com/Triad-Labs-Inc/katana-ai#readme",
+  "bugs": {
+    "url": "https://github.com/Triad-Labs-Inc/katana-ai/issues"
+  },
   "type": "module",
   "bin": {
     "kat": "./bin/katana.js"
