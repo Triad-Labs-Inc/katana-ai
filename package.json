@@ -1,10 +1,36 @@
 {
-  "name": "katana",
-  "module": "src/index.tsx",
+  "name": "katana-ai",
+  "version": "1.0.0",
+  "description": "Sharp. Precise. Powerful. A TUI application built with OpenTUI.",
   "type": "module",
-  "private": true,
+  "bin": {
+    "kat": "./bin/katana.js"
+  },
+  "files": [
+    "bin/",
+    "dist/"
+  ],
   "scripts": {
-    "dev": "bun run --watch src/index.tsx"
+    "dev": "bun run --watch src/index.tsx",
+    "build": "bun build src/index.tsx --outdir dist --target bun",
+    "build:compile": "bun build --compile src/index.tsx --outfile dist/katana",
+    "build:macos-arm64": "bun build --compile --target=bun-darwin-arm64 src/index.tsx --outfile dist/katana-darwin-arm64",
+    "build:macos-x64": "bun build --compile --target=bun-darwin-x64 src/index.tsx --outfile dist/katana-darwin-x64",
+    "build:linux-x64": "bun build --compile --target=bun-linux-x64 src/index.tsx --outfile dist/katana-linux-x64",
+    "build:linux-arm64": "bun build --compile --target=bun-linux-arm64 src/index.tsx --outfile dist/katana-linux-arm64",
+    "build:windows": "bun build --compile --target=bun-windows-x64 src/index.tsx --outfile dist/katana-windows-x64.exe",
+    "prepublishOnly": "bun run build"
+  },
+  "keywords": [
+    "cli",
+    "tui",
+    "terminal",
+    "bun",
+    "opentui"
+  ],
+  "license": "MIT",
+  "engines": {
+    "bun": ">=1.0.0"
   },
   "devDependencies": {
     "@types/bun": "latest"
@@ -15,6 +41,8 @@
   "dependencies": {
     "@opentui/core": "^0.1.68",
     "@opentui/react": "^0.1.68",
-    "react": "^19.2.3"
+    "@types/yargs": "^17.0.35",
+    "react": "^19.2.3",
+    "yargs": "^18.0.0"
   }
 }
